@@ -1,0 +1,69 @@
+true:homework2 rylynn$ mpiexec -n 10 ./18|grep excepted
+0: buffer[0]=0 ,excepted to be 0
+0: buffer[1]=1 ,excepted to be 1
+0: buffer[2]=2 ,excepted to be 2
+0: buffer[3]=3 ,excepted to be 3
+0: buffer[4]=4 ,excepted to be 4
+0: buffer[5]=5 ,excepted to be 5
+0: buffer[6]=6 ,excepted to be 6
+0: buffer[7]=7 ,excepted to be 7
+0: buffer[8]=8 ,excepted to be 8
+0: buffer[9]=9 ,excepted to be 9
+true:homework2 rylynn$ mpicxx -o 18
+18      18.cpp  
+true:homework2 rylynn$ mpicxx -o 18 18.cpp 
+true:homework2 rylynn$ mpiexec -n 2 18
+[proxy:0:0@true.local] HYDU_create_process (utils/launch/launch.c:75): execvp error on file 18 (No such file or directory)
+[proxy:0:0@true.local] HYDU_create_process (utils/launch/launch.c:75): execvp error on file 18 (No such file or directory)
+true:homework2 rylynn$ mpiexec -n 2 ./18
+size = 2
+size = 2
+proc:1is gong to send
+proc:0is gong to receive
+Fatal error in MPI_Recv: Other MPI error, error stack:
+MPI_Recv(200)......................: MPI_Recv(buf=0x7fff569efa70, count=10, MPI_INT, src=1, tag=123, MPI_COMM_WORLD, status=0x7fff569ef9e0) failed
+MPIDI_CH3_PktHandler_ReadySend(785): Ready send from source 1 and with tag 123 had no matching receive
+true:homework2 rylynn$ mpiexec -n 2 ./18
+size = 2
+proc:1is gong to send
+size = 2
+proc:0is gong to receive
+Fatal error in MPI_Recv: Other MPI error, error stack:
+MPI_Recv(200)......................: MPI_Recv(buf=0x7fff5eac5a70, count=10, MPI_INT, src=1, tag=123, MPI_COMM_WORLD, status=0x7fff5eac59e0) failed
+MPIDI_CH3_PktHandler_ReadySend(785): Ready send from source 1 and with tag 123 had no matching receive
+  [Bookmarked 24 Aug 2017, 4:12:03 PM]
+true:homework2 rylynn$ 
+
+
+set i = 1;
+while true;
+do 
+	mpiexec -n 2 ./page_36_rsend_error|grep Error ;
+	echo "program execute $i" ;
+	let "i = i+1";
+done
+
+
+program execute 3116
+program execute 3117
+program execute 3118
+program execute 3119
+program execute 3120
+program execute 3121
+program execute 3122
+program execute 3123
+program execute 3124
+program execute 3125
+program execute 3126
+program execute 3127
+program execute 3128
+program execute 3129
+program execute 3130
+program execute 3131
+program execute 3132
+program execute 3133
+program execute 3134
+program execute 3135
+program execute 3136
+program execute 3137
+program execute 3138
