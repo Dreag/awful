@@ -1,2 +1,2 @@
-# awful
-xd-jk-15-24
+# Awful things are not the bad things.
+Small things gather to be the big.
